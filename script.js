@@ -5,18 +5,17 @@ const REDES = {
 };
 const CNPJ = ""; // ex.: "12.345.678/0001-90" (vazio = não aparece no rodapé)
 
-// Mapa: busca pela Av. Brasil até ter o pin exato da loja.
-// Quando o Giovani mandar o link do Google Maps, trocar MAPA_LINK por ele e MAPA_EMBED pelas coordenadas
-// (ex.: "https://www.google.com/maps?q=-22.30,-53.81&z=17&output=embed").
-const MAPA_LINK = "https://www.google.com/maps/search/?api=1&query=Avenida+Brasil+Ivinhema+MS";
-const MAPA_EMBED = "https://www.google.com/maps?q=Avenida+Brasil,+Ivinhema+-+MS&z=15&output=embed";
+// Mapa: pin exato da loja na Av. Brasil (coordenadas passadas pelo Giovani, 24/10/2026).
+// Usa coordenadas e não o nome, porque no Google o ponto ainda aparece com a loja antiga.
+const MAPA_LINK = "https://www.google.com/maps/search/?api=1&query=-22.3028980,-53.8227125";
+const MAPA_EMBED = "https://www.google.com/maps?q=-22.3028980,-53.8227125&z=17&output=embed";
 
 const brl = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 const linkWhats = (msg) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 const msgProduto = (p) =>
   p.preco == null
-    ? `Oi, Arnaldo! Vi no site o ${p.nome} e tenho interesse. Qual o valor? Tem disponível?`
-    : `Oi, Arnaldo! Vi no site o ${p.nome} (${brl(p.preco)}) e tenho interesse. Tem disponível?`;
+    ? `Oi! Vi no site da Space o ${p.nome} e tenho interesse. Qual o valor? Tem disponível?`
+    : `Oi! Vi no site da Space o ${p.nome} (${brl(p.preco)}) e tenho interesse. Tem disponível?`;
 const ICONE_WHATS = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>`;
 
 // ---------- Catálogo ----------
@@ -63,7 +62,7 @@ function renderFiltros() {
 
 // ---------- Links ----------
 document.querySelectorAll("[data-whats]").forEach((a) => {
-  a.href = linkWhats("Oi, Arnaldo! Vim pelo site da Space e queria saber mais sobre os elétricos.");
+  a.href = linkWhats("Oi! Vim pelo site da Space e queria saber mais sobre os elétricos.");
 });
 document.querySelectorAll("[data-whats-msg]").forEach((a) => {
   a.href = linkWhats(a.dataset.whatsMsg);
