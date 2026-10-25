@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" stroke="#39ff88" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- rodas -->
+  <circle cx="54" cy="112" r="34"/>
+  <circle cx="186" cy="112" r="34"/>
+  <circle cx="54" cy="112" r="5" fill="#39ff88"/>
+  <circle cx="186" cy="112" r="5" fill="#39ff88"/>
+  <!-- quadro -->
+  <path d="M54 112 L114 112 L98 60 Z"/>
+  <path d="M98 60 L166 64 L114 112"/>
+  <path d="M166 64 L186 112"/>
+  <!-- bateria no tubo inferior -->
+  <path d="M158 74 L124 106" stroke-width="12" stroke="#14c96a"/>
+  <path d="M146 84 L140 92 L146 92 L140 100" stroke="#060807" stroke-width="2.5"/>
+  <!-- pedal -->
+  <circle cx="114" cy="112" r="9"/>
+  <path d="M114 112 L124 126"/>
+  <!-- selim e guidão -->
+  <path d="M98 60 L94 46"/>
+  <path d="M82 44 L106 44" stroke-width="7"/>
+  <path d="M166 64 L162 42"/>
+  <path d="M152 40 L176 36"/>
+</svg>
